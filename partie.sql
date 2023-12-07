@@ -1,10 +1,12 @@
-CREATE DATABASE briefphp ;
+CREATE DATABASE briefphpandjs ;
 CREATE TABLE inscription (
     id int PRIMARY KEY AUTO_INCREMENT,
     nom VARCHAR(20),
     prenom VARCHAR(20),
     email varchar(200),
-    phone VARCHAR (20)
+    password VARCHAR(100),
+    phone VARCHAR (20),
+    role VARCHAR(100)
  );
 CREATE Table art(
  id int PRIMARY KEY AUTO_INCREMENT,

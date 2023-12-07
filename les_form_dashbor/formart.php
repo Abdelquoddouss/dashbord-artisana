@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="css/user.css" rel="stylesheet">
+    <link href="../css/user.css" rel="stylesheet">
 
 </head>
 <body>
 <div class="form-main" >
       <div class="main-wrapper">
-        <h2 class="form-head">FORM:</h2>
+        <h2 class="form-head">form Artisant:</h2>
         <form class="form-wrapper" method="post">
           <div class="form-card">
             <input
               class="form-input"
               type="text"
-              name="last-name"  
+              name="nom"  
             
             />
             <label class="form-label" for="last-name">Nom</label>
@@ -25,27 +25,27 @@
             <input
               class="form-input"
               type="text"
-              name="Name"   
+              name="age"   
             />
-            <label class="form-label" for="Name">prenom</label>
+            <label class="form-label" for="Name">age</label>
           </div>
 
           <div class="form-card">
             <input
               class="form-input"
-              type="email"
-              name="email"
+              type="text"
+              name="metier"
             />
-            <label class="form-label" for="email">Email</label>
+            <label class="form-label" for="email">metier</label>
           </div>
 
           <div class="form-card">
             <input
               class="form-input"
-              type="number"
-              name="phone_number"   
+              type="text"
+              name="adress"   
             />
-            <label class="form-label" for="phone_number">Phone number</label>
+            <label class="form-label" for="phone_number">Adress</label>
           </div>
 
           <div class="btn-wrap">
@@ -62,20 +62,20 @@
 
 <?php
 
-include 'conection.php';
+include '../conection.php';
 
 if (isset($_POST['submit'])) {
   
-  $last_name=$_POST['last-name'];
-  $Name= $_POST['Name'];
-  $email= $_POST['email'];
-  $phone_number= $_POST['phone_number'];
+  $name=$_POST['nom'];
+  $age= $_POST['age'];
+  $metier= $_POST['metier'];
+  $adress= $_POST['adress'];
 
-  $query="INSERT INTO `inscription`(`nom`, `prenom`, `email`, `phone`) VALUES ('$Name','$last_name','$email','$phone_number')";
+  $query="INSERT INTO `art`(`artisant`, `age`, `metier`, `local`) VALUES ('$name','$age','$metier','$adress')";
   $result = mysqli_query($conn,$query);
   
  if(isset($result)){
-  header("location:index.php");
+  header("location:artisant.php");
  }
 }
 

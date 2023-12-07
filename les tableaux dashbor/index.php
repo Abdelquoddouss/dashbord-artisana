@@ -1,5 +1,9 @@
 <?php
    include_once 'header.php';
+   session_start();
+  if(empty($_SESSION['role'])){
+    header("location:../../views/signin.php");
+  }
    ?>
    <?php
           include "conection.php";

@@ -1,7 +1,7 @@
 
 <?php
 
-include 'conection.php';
+include '../conection.php';
 
 if (isset($_POST['submit'])) {
   
@@ -10,7 +10,7 @@ if (isset($_POST['submit'])) {
     $remise= $_POST['remise'];
     $categorie= $_POST['categorie'];
 
-  $query="INSERT INTO `produit`(`nom_produit`, `prix_fixe`, `remise`, `categories_id`) VALUES ('$name','$prix','$remise','$categorie')";
+  $query="INSERT INTO `produit` (`nom_produit`, `prix_fixe`, `remise`, `categories_id`) VALUES ('$name','$prix','$remise','$categorie')";
   $result = mysqli_query($conn,$query);
 
  if(isset($result)){
@@ -26,7 +26,7 @@ if (isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="css/user.css" rel="stylesheet">
+    <link href="../css/user.css" rel="stylesheet">
 </head>
 <body>
 
